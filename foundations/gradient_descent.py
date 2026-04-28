@@ -1,0 +1,13 @@
+import math
+class Solution:
+    def get_minimizer(self, iterations: int, learning_rate: float, init: int) -> float:
+        # Objective function: f(x) = x^2
+        # Derivative:         f'(x) = 2x
+        # Update rule:        x = x - learning_rate * f'(x)
+        # Round final answer to 5 decimal places
+        counter = 0
+        x = init
+        while counter != iterations:
+            x = x - learning_rate * 2 * x
+            counter += 1
+        return round(x, 5)
